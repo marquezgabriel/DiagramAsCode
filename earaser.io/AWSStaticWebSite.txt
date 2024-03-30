@@ -19,6 +19,6 @@ canada-central-1 [icon: aws-region]{
 }
 
 // Define connections
+Users <> CloudFront <> SSL Certificate
+SSL Certificate <> S3
 Developers <> GitHub <> S3
-Users <> CloudFront <> us-east-2
-CloudFront <> S3
