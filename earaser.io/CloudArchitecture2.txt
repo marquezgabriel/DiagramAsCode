@@ -1,0 +1,19 @@
+// Define groups and nodes
+API gateway [icon: aws-api-gateway]
+VPC Subnet [icon: aws-vpc] {
+  Main Server {
+    Server [icon: aws-ec2]
+    Data [icon: aws-rds]
+  }
+  Queue [icon: aws-auto-scaling]
+  Compute Nodes [color: red] {
+    Worker 1 [icon: aws-ec2]
+    Worker 2 [icon: aws-ec2]
+    Worker 3 [icon: aws-ec2]
+  }
+}
+// Define connections
+
+API gateway > Server > Data
+Server > Queue
+Queue > Worker 1, Worker 2, Worker 3
