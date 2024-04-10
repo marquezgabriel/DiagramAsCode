@@ -1,0 +1,27 @@
+// Define groups and nodes
+Andrew [shape: square, icon: user]
+Region [icon: aws-region] {
+  LoadBalancer [icon: aws-elastic-load-balancing]
+  Frontend [icon: aws-front-end-web-mobile]
+  Backend [icon: aws-ec2]
+  MesagingSystem [icon: aws-database]
+  Database [icon: aws-database]
+  SearchService [shape: triangle, icon: aws-cloudsearch]
+  API [icon: aws-api-gateway]
+  RealTimePublisher [shape: oval, icon: aws-elasticache]
+  DecentralizedService [shape: oval, icon: aws-cloudfront]
+  Momento [shape: oval, icon: aws-elasticache]
+  TimelineService [icon: aws-timestream]
+}
+
+// Define connections
+Andrew > DecentralizedService
+DecentralizedService > LoadBalancer
+LoadBalancer > Frontend, Backend
+Backend > Momento, Database, SearchService
+Momento > TimelineService
+TimelineService > MesagingSystem
+Frontend < API > Backend
+MesagingSystem > RealTimePublisher
+RealTimePublisher > Frontend
+
