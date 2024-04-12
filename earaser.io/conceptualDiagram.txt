@@ -1,5 +1,6 @@
 // Define groups and nodes
 Andrew [shape: square, icon: user]
+DecentralizedService [shape: oval, icon: aws-cloudfront]
 Region [icon: aws-region] {
   LoadBalancer [icon: aws-elastic-load-balancing]
   Frontend [icon: aws-front-end-web-mobile]
@@ -9,7 +10,6 @@ Region [icon: aws-region] {
   SearchService [shape: triangle, icon: aws-cloudsearch]
   API [icon: aws-api-gateway]
   RealTimePublisher [shape: oval, icon: aws-elasticache]
-  DecentralizedService [shape: oval, icon: aws-cloudfront]
   Momento [shape: oval, icon: aws-elasticache]
   TimelineService [icon: aws-timestream]
 }

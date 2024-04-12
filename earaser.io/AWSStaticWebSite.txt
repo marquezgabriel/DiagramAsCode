@@ -1,24 +1,25 @@
 // Define groups and nodes
 Users [icon: users]
+CloudFront [icon: aws-cloudfront]
 Developers [icon: user-cog]
 GitHub [icon: github]
+HostedZone [icon: aws-route-53]
+CloudFormation [icon: aws-cloudformation]
 // GitHub Actions [icon: github-actions]
-
-CloudFront [icon: aws-cloudfront]
 us-east-2 [icon: aws-region] 
 {
-  Certificate Manager [icon: aws-certificate-manager]{
+  Certificate Manager [icon: aws-certificate-manager]
   SSL Certificate [icon: aws-certificate-manager]
-  }
 }
-
 canada-central-1 [icon: aws-region]{
-  Route 53 Hosted Zone [icon: aws-route-53]{ //[color: purple]
     S3 [icon: aws-simple-storage-service]
-  }
 }
-
 // Define connections
-Users <> CloudFront <> SSL Certificate
-SSL Certificate <> S3
-Developers <> GitHub <> S3
+Users <> HostedZone 
+Users > CloudFront
+CloudFront <> SSL Certificate
+CloudFront <> S3
+Developers > GitHub 
+GitHub > CloudFormation
+CloudFormation > S3 
+SSL Certificate <> Certificate Manager
