@@ -1,10 +1,21 @@
 // Nodes and groups
 Team Incidents Queue [shape: oval, icon: file-text]
-Could we fix this? [shape: diamond, icon: repeat]
+Does the problem match an item in the service catalog? [shape: diamond, icon: repeat]
+Service Catalog [icon: zap, color: white]
+Could I fix it myself? [shape: diamond, icon: repeat]
+If not in the catalog is the responsible team known? [shape: diamond, icon: repeat]
 Send to the local service desk [shape: oval, icon: zap]
+Fix it and Document it [icon: tool, color: white]
 Assign it [shape: oval, icon: file-text]
+Close Incident [shape: oval, icon: file-text]
 
 // Relationships
-Team Incidents Queue > Could we fix this? 
-Could we fix this? > Send to the local service desk: No
-Could we fix this? > Assign it: Yes
+Team Incidents Queue > Does the problem match an item in the service catalog? 
+Service Catalog <> Does the problem match an item in the service catalog?
+Does the problem match an item in the service catalog? > If not in the catalog is the responsible team known?: No
+Does the problem match an item in the service catalog? > Could I fix it myself?: Yes
+If not in the catalog is the responsible team known? > Assign it: Yes
+If not in the catalog is the responsible team known? > Send to the local service desk: No
+Could I fix it myself?> Fix it and Document it: Yes
+Could I fix it myself?> Assign it: No
+Fix it and Document it > Close Incident
