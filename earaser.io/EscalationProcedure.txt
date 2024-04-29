@@ -1,0 +1,10 @@
+// Nodes and groups
+Team Incidents Queue [shape: oval, icon: file-text]
+Could we fix this? [shape: diamond, icon: repeat]
+Send to the local service desk [shape: oval, icon: zap]
+Assign it [shape: oval, icon: file-text]
+
+// Relationships
+Team Incidents Queue > Could we fix this? 
+Could we fix this? > Send to the local service desk: No
+Could we fix this? > Assign it: Yes
