@@ -1,0 +1,46 @@
+user [icon: user, color: blue] {
+  id UUID
+  userName string
+  email string
+  createdAt date
+  itemId item
+}
+
+item [icon: home, color: green] {
+  id UUID
+  userId UUID
+  name string
+  categoryId UUID
+  quantity int
+  expirationDate date
+  purchaseDate date
+  maintenanceDate date
+  ebayValue double
+  createdAt date
+  updatedAt date
+}
+
+category [icon: folder, color: green] {
+  id UUID 
+  name string
+  createdAt Date
+  updatedAt Date
+  itemId item
+}
+
+notification [icon: orbit, color: red] {
+  id UUID
+  userId UUID
+  itemId UUID
+  type string
+  message string
+  isRead bool
+  createdAt date
+}
+
+user.itemId > item.id
+item.userId > user.id
+item.categoryId < category.id
+category.itemId > item.id
+notification.userId > user.id
+notification.itemId > item.id
