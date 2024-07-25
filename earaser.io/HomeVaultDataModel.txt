@@ -1,13 +1,16 @@
-user [icon: user, color: blue] {
+userModel [icon: user, color: blue] {
   id UUID
-  userName string
-  email string
   createdAt date
-  itemId item
+  username string
+  email string
+  updatedAt date
+  itemsId item
+  notifications notification
 }
 
-item [icon: home, color: green] {
+itemModel [icon: home, color: green] {
   id UUID
+  createdAt date
   userId UUID
   name string
   categoryId UUID
@@ -16,31 +19,27 @@ item [icon: home, color: green] {
   purchaseDate date
   maintenanceDate date
   ebayValue double
-  createdAt date
   updatedAt date
 }
 
-category [icon: folder, color: green] {
+categoryModel [icon: folder, color: green] {
   id UUID 
-  name string
   createdAt Date
+  name string
   updatedAt Date
-  itemId item
+  items item
 }
 
-notification [icon: orbit, color: red] {
+notificationModel [icon: orbit, color: red] {
   id UUID
+  createdAt date
   userId UUID
   itemId UUID
   type string
   message string
   isRead bool
-  createdAt date
 }
 
-user.itemId > item.id
-item.userId > user.id
-item.categoryId < category.id
-category.itemId > item.id
-notification.userId > user.id
-notification.itemId > item.id
+userModel.itemsId > itemModel.id
+userModel.notifications > notificationModel.id
+
