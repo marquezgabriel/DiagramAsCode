@@ -1,45 +1,13 @@
-userModel [icon: user, color: blue] {
+Item [icon: home, color: green] {
   id UUID
   createdAt date
-  username string
-  email string
-  updatedAt date
-  itemsId item
-  notifications notification
-}
-
-itemModel [icon: home, color: green] {
-  id UUID
-  createdAt date
-  userId UUID
   name string
-  categoryId UUID
   quantity int
   expirationDate date
   purchaseDate date
-  maintenanceDate date
-  ebayValue double
   updatedAt date
+  price double
+  details string
+  category string
+  location string
 }
-
-categoryModel [icon: folder, color: green] {
-  id UUID 
-  createdAt Date
-  name string
-  updatedAt Date
-  items item
-}
-
-notificationModel [icon: orbit, color: red] {
-  id UUID
-  createdAt date
-  userId UUID
-  itemId UUID
-  type string
-  message string
-  isRead bool
-}
-
-userModel.itemsId > itemModel.id
-userModel.notifications > notificationModel.id
-
