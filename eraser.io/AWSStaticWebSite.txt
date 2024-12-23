@@ -6,8 +6,7 @@ GitHub [icon: github]
 HostedZone [icon: aws-route-53]
 CloudFormation [icon: aws-cloudformation]
 // GitHub Actions [icon: github-actions]
-us-east-2 [icon: aws-region] 
-{
+us-east-2 [icon: aws-region]{
   Certificate Manager [icon: aws-certificate-manager]
   SSL Certificate [icon: aws-certificate-manager]
 }
